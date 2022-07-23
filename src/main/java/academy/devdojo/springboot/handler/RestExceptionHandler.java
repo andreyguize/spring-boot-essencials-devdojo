@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 
 @ControllerAdvice
 public class RestExceptionHandler {
-    
+
     @ExceptionHandler(BadRequestException.class)
     public ResponseEntity<BadRequestExceptionDetails> handlerBadRequestException(BadRequestException badRequestException) {
         return new ResponseEntity<>(

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -33,7 +34,8 @@ public class AnimeService {
                 .orElseThrow(() -> new BadRequestException("Anime ID not Found"));
     }
 
-    public Anime save(AnimePostRequestBody animePostRequestBody) {
+    @Transactional
+    public Anime save(AnimePostRequestBody animePostRequestBody){
         return animeRepository.save(AnimeMapper.INSTANCE.toAnime(animePostRequestBody));
     }
 
