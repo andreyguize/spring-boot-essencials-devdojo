@@ -10,5 +10,5 @@ import org.mapstruct.factory.Mappers;
 public abstract class AnimeMapper {
     public static final AnimeMapper INSTANCE = Mappers.getMapper(AnimeMapper.class);
     public abstract Anime toAnime(AnimePostRequestBody animePostRequestBody);
-    public abstract Anime toAnime(AnimePutRequestBody animePostRequestBody);
+    public abstract Anime toAnime(AnimePutRequestBody animePutRequestBody);
 }
