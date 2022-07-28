@@ -5,10 +5,15 @@ import academy.devdojo.springboot.requests.AnimePostRequestBody;
 import academy.devdojo.springboot.requests.AnimePutRequestBody;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Mapper(componentModel = "spring")
 public abstract class AnimeMapper {
     public static final AnimeMapper INSTANCE = Mappers.getMapper(AnimeMapper.class);
+
+    @Autowired
     public abstract Anime toAnime(AnimePostRequestBody animePostRequestBody);
+
+    @Autowired
     public abstract Anime toAnime(AnimePutRequestBody animePutRequestBody);
 }
